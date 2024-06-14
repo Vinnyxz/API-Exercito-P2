@@ -13,6 +13,6 @@ const schema = new mongoose.Schema(
     },
     { timestamps: true })
 
-const Departamento = mongoose.model('departamento', schema)
+const Quartel = mongoose.model('quartel', schema)
 
-module.exports = Departamento
+module.exports = Quartel

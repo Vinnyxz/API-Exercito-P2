@@ -3,7 +3,7 @@ const router = express.Router()
 
 // controllers
 const CargoController = require('../controllers/CargoController')
-const DepartamentoController = require('../controllers/DepartamentoController')
+const QuartelController = require('../controllers/QuartelController')
 const FuncionarioController = require('../controllers/FuncionarioController')
 const ProjetoController = require('../controllers/ProjetoController')
 const TarefaController = require('../controllers/TarefaController')
@@ -11,7 +11,7 @@ const TarefaController = require('../controllers/TarefaController')
 // validators
 const { validarID } = require('../validators/IdValidator')
 const { validarCargo } = require('../validators/CargoValidator')
-const { validarDepartamento } = require('../validators/DepartamentoValidator')
+const { validarQuartel } = require('../validators/QuartelValidator')
 const { validarFuncionario } = require('../validators/FuncionarioValidator')
 const { projetoValidador } = require('../validators/ProjetoValidator')
 const { tarefaValidador } = require('../validators/TarefaValidator')
@@ -25,11 +25,11 @@ router.delete('/cargos/:id', validarID, CargoController.excluir)
 
 
 // Departamentos
-router.get('/departamentos', DepartamentoController.buscarTodos)
-router.get('/departamentos/:id', validarID, DepartamentoController.buscarPorID)
-router.post('/departamentos', validarDepartamento, DepartamentoController.criar)
-router.put('/departamentos/:id', validarID, validarDepartamento, DepartamentoController.atualizar)
-router.delete('/departamentos/:id', validarID, DepartamentoController.excluir)
+router.get('/quartel', QuartelController.buscarTodos)
+router.get('/quartel/:id', validarID, QuartelController.buscarPorID)
+router.post('/quartel', validarQuartel, QuartelController.criar)
+router.put('/quartel/:id', validarID, validarQuartel, QuartelController.atualizar)
+router.delete('/quartel/:id', validarID, QuartelController.excluir)
 
 // Funcionarios
 router.get('/funcionarios', FuncionarioController.buscarTodos)

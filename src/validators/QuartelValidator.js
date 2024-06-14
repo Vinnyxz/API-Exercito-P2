@@ -10,7 +10,7 @@ const schema = yup.object().shape(
     }
 )
 
-function validarDepartamento(req, res, next) {
+function validarQuartel(req, res, next) {
     schema
         .validate(req.body, { abortEarly: false })
         .then(() => next())
@@ -23,5 +23,5 @@ function validarDepartamento(req, res, next) {
 }
 
 module.exports = {
-    validarDepartamento
+    validarQuartel
 }
